@@ -1,0 +1,129 @@
+/* Root popup container (fixed at bottom-left) */
+#onp-popup {
+    position: fixed;
+    bottom: 40px;
+    left: 20px;
+    z-index: 9999;
+    display: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Gradient border card wrapper */
+.onp-card {
+    background: linear-gradient(120deg, #ff6fd8, #8456ff, #46c2ff);
+    padding: 1px 4px;
+    border-radius: 15px;
+    box-shadow: 0 18px 35px rgba(15, 23, 42, 0.35);
+}
+
+/* Actual white card inside */
+.onp-inner {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 15px 18px;
+    min-width: 300px;
+    max-width: 360px;
+}
+
+/* Header row */
+.onp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.onp-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.onp-amount-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #ffffff;
+    position: relative;
+    z-index: 1;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: sans-serif;
+    margin-left: 10px;
+
+    /* Text Gradient logic */
+    background-image: linear-gradient(to right, #6366f1, #d946ef);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    /* Fallback for browsers */
+
+    /* Glow Shadow */
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.15);
+}
+
+/* Border-er jonno pseudo-element use kora hoyeche jate text gayeb na hoy */
+.onp-amount-pill::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    padding: 2px;
+    /* Border er thickness */
+    background: linear-gradient(to right, #6366f1, #d946ef);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+/* Emoji ba icon jodi thake, tar color thik rakhar jonno */
+.onp-amount-pill span:not(:last-child) {
+    -webkit-text-fill-color: initial;
+    background: none;
+}
+
+.onp-amount-icon {
+    font-size: 18px;
+}
+
+/* Info rows */
+.onp-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    color: #1b1b1b;
+    margin-top: 4px;
+}
+
+.onp-row-icon {
+    width: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.onp-row-label {
+    font-weight: 500;
+    color: #000000;
+    min-width: auto;
+
+}
+
+.onp-row-value {
+    font-weight: 500;
+
+    color: #111827;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.onp-row-value-product {
+    max-width: 200px;
+}
